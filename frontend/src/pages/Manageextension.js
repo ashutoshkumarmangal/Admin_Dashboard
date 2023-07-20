@@ -1,7 +1,18 @@
 import { text } from '@fortawesome/fontawesome-svg-core'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Manageextension = () => {
+const [marathon, setMarathon] = useState([]);
+useEffect(()=>{
+  getMarathon();
+
+},[]);
+const getMarathon  = async()=>{
+  let result = await fetch("http://localhost:8080/marathon");
+  result = await result.json();
+  setMarathon(result);
+}
+
   return (
     <div className="wholeareaDashboard">
       <div className="admindashboardmanageextension">
@@ -27,9 +38,9 @@ const Manageextension = () => {
             <option disabled selected>
               --Select Marathon--
             </option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            {marathon.map((item,index)=>(
+              <option>{item.title}</option>
+            ))}
           </select>
         </div>
       </div>

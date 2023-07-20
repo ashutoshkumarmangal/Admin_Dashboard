@@ -31,8 +31,12 @@ import Revenue from "./pages/Revenue";
 import Usersessionlogs from "./pages/Usersessionlogs";
 import Logout from "./pages/Logout";
 
+import AdduserModules from "./components/AdduserModules";
 import Createuser from "./components/Createuser";
-
+import Createrule from "./components/Createrule";
+import Userprivilege from "./pages/Userprivilege";
+import Createmarathon from "./components/Createmarathon";
+import Createcourse from "./components/Createcourse";
 // import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
 
@@ -77,10 +81,14 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/revenue" element={<Revenue />} />
+          <Route path="/userprivelege" element={<Userprivilege/>}/>
           <Route path="/usersessionlogs" element={<Usersessionlogs />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/createuser" element={<Createuser/>}/>
-
+          <Route path="/addusermodule" element={<AdduserModules/>}/>
+          <Route path="/createrule" element={<Createrule/>}/>
+          <Route path="/createcourse" element={<Createcourse/>}/>
+          <Route path="/createmarathon" element={<Createmarathon/>}/>
         </Routes>
       </BrowserRouter>
 

@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import Auditlogtable from "../components/Auditlogtable";
 
 const Auditlogs = () => {
+  const [user, setUsers] = useState([]);
+  useEffect(()=>{
+    getUsers();
+  }, []);
+  const getUsers = async ()=>{
+    let result = await fetch("http://localhost:8080/users");
+    result = await result.json();
+    setUsers(result);
+  };
+
   return (
     <div className="wholeareadashboard">
       <div className="wholeareaauditlogs">
@@ -10,9 +21,15 @@ const Auditlogs = () => {
             <option disabled selected>
               --Select Name--
             </option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            {user.map((item, index) => (
+                
+                
+                  <option>{item.name +" " +item.lastName}</option>
+                 
+                
+                
+              ))}
+            
           </select>
         </div>
 

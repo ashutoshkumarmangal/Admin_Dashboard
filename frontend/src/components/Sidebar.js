@@ -158,6 +158,11 @@ const Sidebar = ({children}) => {
             icon:faUsers
         },
         {
+            path:"/userprivelege",
+            name:"User Privelege",
+            icon:faUser
+        },
+        {
             path:"/logout",
             name:"Log Out",
             icon:faSignOut

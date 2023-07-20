@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Createuser = () => {
-  const [userrole, setUserrole] = React.useState("");
-  const [language, setLanguage] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [lastName, setLastname] = React.useState("");
+  const [userrole, setUserrole] = useState("");
+  const [language, setLanguage] = useState("");
+  const [name, setName] = useState("");
+  const [lastName, setLastname] =useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmpassword] = useState("");
@@ -18,7 +18,7 @@ const Createuser = () => {
   e.preventDefault();
   
   try {
-    const response = await fetch('http://localhost:5003/createusers', {
+    const response = await fetch('http://localhost:8080/createusers', {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const Createuser = () => {
         lastName,
         email,
         password,
-        confirmPassword,
+        confirmPassword
       }),
     });
 
@@ -62,8 +62,8 @@ const Createuser = () => {
               <label>User Role:</label>
               <select id="userrole"  value={userrole} onChange={(e)=> setUserrole(e.target.value)}>
                 <option value="">--Select Role--</option>
-                <option value="english">User</option>
-                <option value="spanish">Admin</option>
+                <option >User</option>
+                <option >Admin</option>
               </select>
             </div>
 
@@ -72,32 +72,32 @@ const Createuser = () => {
               <select id="language" value={language} onChange={(e) =>setLanguage(e.target.value)}>
 
                 <option value="">Select a language</option>
-                <option value="english">English</option>
+                <option >English</option>
 
-                <option value="french">French</option>
+                <option >French</option>
               </select>
             </div>
 
             <div className="required">
               <label>Name:</label>
-              <input type="text" id="name" value={name} onChange={(e)=> setName(e.target.value)}/>
+              <input type="text" id="name" value={name} onChange={(e)=> setName(e.target.value)}></input>
             </div>
 
             <div className="required">
               <label>Last Name:</label>
-              <input type="text" id="lastName" value={lastName} onChange={(e)=> setLastname(e.target.value)} />
+              <input type="text" id="lastName" value={lastName} onChange={(e)=> setLastname(e.target.value)} ></input>
             </div>
 
             <div className="required">
               <label htmlFor="email">Email:</label>
               <input type="email" id="email"
-              value={email} onChange={(e)=> setEmail(e.target.value)} />
+              value={email} onChange={(e)=> setEmail(e.target.value)} ></input>
             </div>
 
             <div className="required">
               <label>Password:</label>
               <input type="password" id="password"  value={password} onChange={(e)=> setPassword(e.target.value)}
-             />
+             ></input>
             </div>
 
             <div className="required">
@@ -105,8 +105,8 @@ const Createuser = () => {
               <input
                 type="password"
                 id="confirmPassword"
-                value={confirmPassword} onChange={(e)=> setConfirmpassword(e.target.value)}
-              />
+                value={confirmPassword} onChange={(e)=> setConfirmpassword(e.target.value)}>
+                </input>
             </div>
 
            <button type="button" onClick={handleBack}>Back</button>

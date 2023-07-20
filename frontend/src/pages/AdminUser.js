@@ -2,27 +2,30 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 const AdminUser = () => {
-  const [users, setUsers] = useState(true);
+  const [user, setUsers] = useState([]);
   useEffect(() => {
     getUsers();
   }, []);
   const getUsers = async () => {
-    let result = await fetch("http:localhost:5003/users");
+    let result = await fetch("http://localhost:8080/users");
     result = await result.json();
     setUsers(result);
   };
-  const searchHandle = async (event) => {
-    let key = event.target.value;
-    if (key) {
-      let result = await fetch(`http://localhost:5003/search/${key}`);
-      result = await result.json();
-      if (result) {
-        setUsers(result);
-      }
-    } else {
-      getUsers();
-    }
-  };
+
+  // const searchHandle = async (event) => {
+  //   let key = event.target.value;
+  //   if (key) {
+  //     let result = await fetch(`http://localhost:8080/search/${key}`);
+  //     result = await result.json();
+  //     if (result) {
+  //       setUsers(result);
+  //     }
+  //   } else {
+  //     getUsers();
+  //   }
+  // };
+
+
   return (
     <div className="wholeareaDashboard">
       <div className="adminDashboard">
@@ -46,7 +49,7 @@ const AdminUser = () => {
               </select>
             </div>
             <div class="search-container">
-              <input type="text" placeholder="Search" onChange={searchHandle} />
+              <input type="text" placeholder="Search" /*onChange={searchHandle}*/ />
             </div>
           </div>
         </div>
@@ -60,24 +63,30 @@ const AdminUser = () => {
               <li className="headinglist">Email</li>
               <li className="headinglist">Action</li>
             </ul>
-            {users.length > 0 ? (
-              users.map((item, index) => (
-                <ul key={item._id}>
+            {user.length >0?(
+            
+              user.map((item, index) => (
+                /*<ul key={item._id}>*/
+                <ul className="heading">
                   <li className="belowlist">{index + 1}</li>
                   <li className="belowlist">{item.userrole}</li>
                   <li className="belowlist">{item.language}</li>
-                  <li className="belowlist">{item.name + item.lastname}</li>
+                  <li className="belowlist">{item.name +" " +item.lastName}</li>
                   <li className="belowlist">{item.email}</li>
                   <li className="belowlist">
-                    <Link to={`/addusermodule/${item._id}`}>
-                      Add User Modules
-                    </Link>
+                  {/* <Link to={`/addusermodule/${item._id}`} className="addusermodulebutton">
+            Add User Modules
+          </Link> */}
+          <Link to={"/addusermodule"} className="addusermodulebutton">
+            Add User Modules
+          </Link>
                   </li>
                 </ul>
+                /*</ul>*/
               ))
-            ) : (
-              <h2 className="no-users">No Users Found!</h2>
+            ):(<h2 className="no-users">No Users Found</h2>
             )}
+            
           </div>
         </div>
       </div>

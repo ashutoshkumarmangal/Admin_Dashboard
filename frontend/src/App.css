@@ -152,6 +152,21 @@
   border: 1px solid black;
   padding: 8px;
   text-decoration: none;
+  background-color: #3876e9;
+  color: white;
+}
+.rightbutton2{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  /* background-color: red; */
+}
+.rightButton{
+  height: 35px;
+  padding-right: 60px;
+  margin-right: 80px;
+  align-items: center;
+  
 }
 
 .adminDashboardUpper{
@@ -171,6 +186,15 @@
   padding: 1rem!important;
   height: 8vh;
 }
+.belowlist1{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+/* .belowlist{
+  display: flex;
+  justify-content: space-between;
+} */
 .showarea{
     max-width: 22%;
     display: flex;
@@ -188,6 +212,15 @@
 .dropdown1{
   position: relative ;
   padding-top: 18px;
+}
+.dropdown4{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 50px;
+max-width: 200px;
+}
+.select4{
+  height: 33px;
 }
 .dropdown-menu{
   list-style-type: none;
@@ -318,6 +351,7 @@ option {
 .container {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 
 .dropdown {
@@ -581,10 +615,11 @@ option {
   }
   
   .belowlist {
-    display: flex;
+    /* display: flex;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; */
+    flex: 1;
   }
   
  .no-users {
@@ -676,4 +711,329 @@ option {
      justify-content: space-between;
      padding: 10px;
    }
+  .notification3line{
+    /* display: flex; */
+     /* justify-content: space-between; */
+     padding: 10px;
+     margin-left: 20px;
+  }
+  .choosefileboxouter{
+    padding: 10px;
+    border: 1px solid black;
+    width: 60vw;
+  }
+  .notification-image-url{
+    width: 60vw;
+    padding: 10px;
+  }
+  .notification3text{
+    padding: 10px;
+  }
+  .notification4line{
+    padding: 20px;
+    
+  }
+  .notification4input{
+    width: 60vw;
+    padding: 10px;
+  }
+  .notification5line{
+    padding: 20px;
+  }
+  .notification5input{
+    width: 60vw;
+    padding: 30px;
+    
+  }
+  /* .notification5inputclass{
+    padding: 10px;
+  } */
+  .notificationButtons{
+    display: flex;
+    justify-content: space-around;
+
+  }
+  .notificationButton1{
+    padding: 8px;
+    width: 90px;
+
+  }
+  .notification1contest{
+    margin-left: 40px;
+  }
+  .wholeareacontest{
+    /* background-color: #eee; */
+    margin-left: 250px;
+    
+  }
+  .nameareacontest{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .checkboxcontest{
+    margin: 17px;
+    height: 29px;
+    width: 25px;
+  }
+  .beforeafterarea{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+    
+  .cardarea{
+    display: flex;
+    justify-content: space-between;
+  }
+  .card1{
+    width: 48%;
+    /* background-color: #4CAF50; */
+    background-color: #d2d9da;
+  }
+  .addarea{
+    width: 100%;
+    height: 30px;
+    /* background-color: #2358bd; */
+    text-align: center;
+    padding-top: 6px;
+  }
+  .slidingarea{
+    width: 100%;
+    height: 75%;
+    background-color: #888;
+    overflow: auto;
+  }
+  .card1buttons{
+     display: flex;
+     justify-content: space-around;
+    }
+    .button1a{
+      width: 110px;
+      height: 34px;
+    }
+    .listofsliding{
+      width: 100%;
+      height: 30px;
+    }
+  .card2{
+    width: 48%;
+    background-color: #d2d9da;
+  }
+  .lowerbuttonarea{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+
+  }
+  .button1a{
+    
+    margin: 10px;
+  }
+  .image-container{
+    width: 90%;
+    height: 70vh;
+    overflow: auto;
+    /* background-color: #2358bd; */
+    margin-left: 40px;
+  }
+  .image-row1{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    
+  }
+  .image-row2{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+  .image-row3{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+  .image-row4{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+  .image-row5{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+  .image-row6{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+  }
+  .wholeareacontest2{
+    margin-left: 50px;
+ /* background-color: #4CAF50; */
+  margin-top: 40px;
+  width: 68vw;
   
+  height: 100vh;
+  position: relative;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+  border: 0;
+  font-weight: 400;
+  margin-bottom: 10vh;
+  border-radius: 2px;
+  }
+  .inprogresslink{
+    text-decoration: none;
+  }
+  .inprogress{
+    width: 80px;
+    align-items: center;
+    padding: 3px;
+    margin: 10px;
+  }
+  .container1{
+    display: flex;
+    justify-content: space-between;
+  }
+.addusermodulebutton{
+  border: 1px solid black;
+}
+.upperselectbar1{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 34px 34px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.managemarathon1{
+  /* background-color: #bd2378; */
+  width: 60vw;
+  height: 80vh;
+  margin: 50px;
+  
+
+}
+.wholeareamanagemarathon{
+  margin-left: 350px;
+  /* background-color: #4CAF50; */
+   margin-top: 40px;
+   width: 68vw;
+   margin-left: 320px;
+   height: 270vh;
+   position: relative;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+   border: 0;
+   font-weight: 400;
+   margin-bottom: 10vh;
+   border-radius: 2px;
+}
+.wholeareadashboard{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.block-type-area .inputbox1{
+  border: 1px solid black;
+}
+.buttoncreatemarathon{
+  gap: 20px;
+ 
+}
+.blockmanagemarathon1{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.back{
+  width: 100px;
+  height: 30px;
+}
+.somelinks{
+  display: flex;
+  justify-content: space-around;
+  padding: 22px;
+    /* background-color: beige; */
+    width: 40%;
+    gap: 13px;
+
+}
+.inprogresslink1{
+  text-decoration: none;
+  
+}
+
+.container3{
+  display: flex;
+  justify-content: center;
+}
+.table4{
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid #ccc; */
+  border-radius: 4px;
+  padding: 10px;
+
+}
+.blockmanagemarathon2{
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.wholeareamanagemarathon1{
+  margin-left: 350px;
+  /* background-color: #4CAF50; */
+   margin-top: 40px;
+   width: 68vw;
+   margin-left: 320px;
+   height: 150vh;
+   position: relative;
+   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+   border: 0;
+   font-weight: 400;
+   margin-bottom: 10vh;
+   border-radius: 2px;
+}
+.createcouponfield{
+  width: 60vw;
+  height: 100vh;
+  background-color: #2358bd;
+  padding: 50px;
+}
+.createcouponMandatoryfield{
+  display: block;
+    /* margin-left: 2px; */
+    border-radius: 10px;
+    margin-right: 2px;
+    padding: 0.35em 0.75em 0.625em;
+    border: 2px groove;
+    background-color: rgb(179, 148, 148);
+    width: 40vw;
+    height: 60vh;
+    margin-left: 8vw;  
+
+}
+.mandatoryfield1part{
+  background-color: #4CAF50;
+  width: 39vw;
+  height: 10vh;
+  margin-top: 50px;
+}
+.selectionpart1{
+  width: 39vw;
+}
+.mandatoryfield1partitem1{
+  padding: 5px;
+}
+.selectionpart2{
+  width: 370px;
+  height: 16px;
+  padding: 5px;
+}
