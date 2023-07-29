@@ -30,6 +30,9 @@ import Profile from "./pages/Profile";
 import Revenue from "./pages/Revenue";
 import Usersessionlogs from "./pages/Usersessionlogs";
 import Logout from "./pages/Logout";
+import FAQtags from "./pages/FAQtags";
+import Greatextension from "./pages/Greatextension";
+import Creategreatextension from "./components/Creategreatextension";
 
 import AdduserModules from "./components/AdduserModules";
 import Createuser from "./components/Createuser";
@@ -37,11 +40,17 @@ import Createrule from "./components/Createrule";
 import Userprivilege from "./pages/Userprivilege";
 import Createmarathon from "./components/Createmarathon";
 import Createcourse from "./components/Createcourse";
+import Editprofile from "./components/Editprofile";
+import Changepassword from "./components/Changepassword";
+import Createmodules from "./components/Createmodules";
+import Creategxcourse from "./components/Creategxcourse";
+
 // import Login from "./pages/Login";
 // import Signup from "./pages/Signup";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
+
 
 function App() {
   return (
@@ -68,6 +77,7 @@ function App() {
           <Route path="/exercise" element={<Exercise />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/faqlist" element={<FAQlist />} />
+          <Route path="/faqtags" element={<FAQtags/>}/>
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/gxcourse" element={<Gxcourse />} />
           <Route path="/managecomments" element={<Managecomments />} />
@@ -85,10 +95,16 @@ function App() {
           <Route path="/usersessionlogs" element={<Usersessionlogs />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/createuser" element={<Createuser/>}/>
-          <Route path="/addusermodule" element={<AdduserModules/>}/>
+          <Route path="/addusermodule/:id" element={<AdduserModules/>}/>
           <Route path="/createrule" element={<Createrule/>}/>
           <Route path="/createcourse" element={<Createcourse/>}/>
           <Route path="/createmarathon" element={<Createmarathon/>}/>
+          <Route path="/editprofile" element={<Editprofile/>}/>
+          <Route path="/changepassword" element={<Changepassword/>}/>
+          <Route path="/createmodules" element={<Createmodules/>}/>
+          <Route path="/greatextension" element={<Greatextension/>}/>
+          <Route path="/creategreatextension" element={<Creategreatextension/>}/>
+          <Route path="/creategxcourse" element={<Creategxcourse/>}/>
         </Routes>
       </BrowserRouter>
 

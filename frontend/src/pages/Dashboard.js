@@ -1,8 +1,11 @@
 import React from 'react'
+// import { Card, CardContent, Typography, CardActions, IconButton } from '@mui/material';
+// import { Favorite, Share, MoreVert } from '@mui/icons-material';
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div className="wholeareadashboard">
+  </div>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Auditlogtable from "../components/Auditlogtable";
+// import Auditlogtable from "../components/Auditlogtable";
 
 const Auditlogs = () => {
   const [user, setUsers] = useState([]);
@@ -46,15 +46,24 @@ const Auditlogs = () => {
           </div>
         </div>
 
-        <div className="auditlogtablepart">
-          <Auditlogtable />
-        </div>
-        <div className="pagination">
+        <div className="tableDashboard">
+          <div className="table">
+            <ul className="heading">
+              <li className="headinglist">S.No</li>
+              <li className="headinglist">Email</li>
+              <li className="headinglist">Session count</li>
+              <li className="headinglist">Ip List</li>
+             
+            </ul>
+</div>
+        {/* <div className="pagination">
           <button className="previousButton">{'\u00AB'} Previous</button>
           <button className="nextButton">Next {'\u00BB'}</button>
-        </div>
+        </div> */}
       </div>
     </div>
+    </div>
+
   );
 };
 

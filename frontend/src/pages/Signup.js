@@ -2,7 +2,15 @@ import React from 'react'
 
 const Signup = () => {
   return (
-    <div className=''>Signup</div>
+     <div className="wholeareaDashboard">
+    <div className="adminDashboard">
+      <div className="adminDashboardUpper">
+        <div className="leftText">Admin User List</div>
+        
+        
+      </div>
+      </div>
+      </div>
   )
 }
 

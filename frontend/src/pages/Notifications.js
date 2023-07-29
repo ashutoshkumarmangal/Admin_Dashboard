@@ -1,6 +1,9 @@
 import React, {useEffect,useState} from "react";
 
+
+
 const Notifications = () => {
+ 
 
   const [marathon, setMarathon] = useState([]);
 useEffect(()=>{
@@ -99,6 +102,8 @@ const getMarathon  = async()=>{
         <button className="notificationButton1">Send</button>
           <button className="notificationButton1">Reset</button>
         </div>
+        
+
       </div>
     </div>
   );

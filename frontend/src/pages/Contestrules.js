@@ -1,7 +1,17 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from "react-router-dom";
 
 const Contestrules = () => {
+
+  const [contestrules, setContestrules] = useState([]);
+  useEffect(() => {
+    getContestrules();
+  }, []);
+  const getContestrules = async () => {
+    let result = await fetch("http://localhost:8080/contestrules");
+    result = await result.json();
+    setContestrules(result);
+  };
   return (
     <div className="wholeareaDashboard">
       <div className="adminDashboard">
@@ -28,16 +38,38 @@ const Contestrules = () => {
             </div>
           </div>
         </div>
-        <div className="table1">
+       
+
+        <div className="tableDashboard">
+          <div className="table">
             <ul className="heading">
               <li className="headinglist">S.No</li>
               <li className="headinglist">Marathon</li>
               <li className="headinglist">Date</li>
               <li className="headinglist">Rule</li>
-              </ul>
+             
+            </ul>
+            {contestrules.length >0?(
+            
+              contestrules.map((item, index) => (
+                /*<ul key={item._id}>*/
+                <ul className="heading">
+                  <li className="belowlist">{index + 1}</li>
+                  <li className="belowlist">{item.marathon}</li>
+                  <li className="belowlist">{item.createdDate}</li>
+                  <li className="belowlist">{item.rule}</li>
+                 
+                </ul>
+               
+              ))
+            ):(<h2 className="no-users">No Users Found</h2>
+            )}
+            
           </div>
         </div>
         </div>
+        </div>
+     
   )
 }
 

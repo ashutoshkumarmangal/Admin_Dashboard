@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
   return (
@@ -10,8 +11,20 @@ const Profile = () => {
         <div className='wholeareaprofile2'>
           <div className='uppernavbar2'>Profile</div>
           <div class="button-on-profile">
-  <button class="edit-button-profile">EDIT PROFILE</button>
-  <button class="edit-button-profile">CHANGE PASSWORD</button>
+          <div className='buttoneditprofile'>
+  
+   
+   <Link to={"/editprofile"} className="edit-button-profile">
+            Edit Profile
+          </Link>
+  </div>
+  <div className='buttonchangepassword'>
+  
+   
+   <Link to={"/changepassword"} className="edit-button-profile2">
+            Change Password
+          </Link>
+</div>
 </div>
 
         </div>

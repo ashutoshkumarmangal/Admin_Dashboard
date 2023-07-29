@@ -4,6 +4,17 @@ const cors = require("cors");
 const User = require("./db/User");
 const Marathon = require("./db/Marathon")
 const Course = require("./db/Course")
+const Modules = require("./db/Modules");
+const Faq = require("./db/Faq")
+const Faqtag = require("./db/Faqtag");
+const Createrule = require("./db/Rule")
+const Feedback = require("./db/Feedback");
+const Greatextension = require('./db/Greatextension');
+const Gxcourse = require('./db/Gxcourse');
+const Couponback = require("./db/Couponback")
+const Extensionback = require("./db/Extensionback");
+const Appsettingback = require('./db/Appsettingback');
+
 require("./db/config")
 
 const app = express();
@@ -32,6 +43,32 @@ app.get("/users", async (req, res) => {
       res.status(500).send("Internal Server Error");
     }
   });
+
+
+  // ----------------------------add user module---------------------
+//   app.post("/users/:id",async(req,res)=>{
+
+//     let result = await Product.findOne({ _id: req.params.id });
+//     if (result) {
+//       resp.send(result);
+//     } else {
+//       resp.send({ result: "No Record Found." });
+//     }
+// })
+
+// app.get("/users", async (req, res) => {
+//     try {
+//       const user = await User.find();
+//       if (user.length > 0) {
+//         res.send(user);
+//       } else {
+//         res.send("Data not found");
+//       }
+//     } catch (error) {
+//       console.error("Error fetching users: ", error);
+//       res.status(500).send("Internal Server Error");
+//     }
+//   });
   
 // ----------------------createmarathon------------------------
 
@@ -80,7 +117,238 @@ app.get("/course", async (req, res) => {
 });
 
 
+// ------------------------------Modules---------------------
 
+app.post("/createmodule",async(req,res)=>{
+
+  const module = new Modules(req.body);
+  let result = await module.save();
+  res.send(result);
+})
+
+app.get("/module", async (req, res) => {
+  try {
+    const module = await Modules.find();
+    if (module.length > 0) {
+      res.send(module);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+
+// ----------------------------------Faq------------------------
+
+app.post("/createfaq",async(req,res)=>{
+
+  const faq = new Faq(req.body);
+  let result = await faq.save();
+  res.send(result);
+})
+
+app.get("/faq", async (req, res) => {
+  try {
+    const faq = await Faq.find();
+    if (faq.length > 0) {
+      res.send(faq);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// --------------------------------------faqtag---------------------
+
+app.post("/faqtag",async(req,res)=>{
+
+  const faqtag = new Faqtag(req.body);
+  let result = await faqtag.save();
+  res.send(result);
+})
+
+app.get("/faqtag", async (req, res) => {
+  try {
+    const faqtag = await Faqtag.find();
+    if (faqtag.length > 0) {
+      res.send(faqtag);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+
+// ------------------------------rule----------------------
+
+app.post("/createrule",async(req,res)=>{
+
+  const createrule = new Createrule(req.body);
+  let result = await createrule.save();
+  res.send(result);
+})
+
+app.get("/contestrules", async (req, res) => {
+  try {
+    const createrule = await Createrule.find();
+    if (createrule.length > 0) {
+      res.send(createrule);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// ---------------------------------feedback-------------------------
+
+app.post("/givefeedback",async(req,res)=>{
+
+  const createfeedback = new Feedback(req.body);
+  let result = await createfeedback.save();
+  res.send(result);
+})
+
+app.get("/feedback", async (req, res) => {
+  try {
+    const createfeedback = await Feedback.find();
+    if (createfeedback.length > 0) {
+      res.send(createfeedback);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+
+// ----------------------------------great marathon----------------------
+
+
+app.post("/creategreatextension",async(req,res)=>{
+
+  const greatextension= new Greatextension(req.body);
+  let result = await greatextension.save();
+  res.send(result);
+})
+
+app.get("/greatextension", async (req, res) => {
+  try {
+    const creategreatextension = await Greatextension.find();
+    if (creategreatextension.length > 0) {
+      res.send(creategreatextension);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// -------------------------------gxcourse----------------------------
+
+app.post("/creategxcourse",async(req,res)=>{
+
+  const gxcourse= new Gxcourse(req.body);
+  let result = await gxcourse.save();
+  res.send(result);
+})
+
+app.get("/gxcourse", async (req, res) => {
+  try {
+    const creategxcourse = await Gxcourse.find();
+    if (creategxcourse.length > 0) {
+      res.send(creategxcourse);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// --------------------------couponsback-------------------------------
+
+app.post("/createcoupons",async(req,res)=>{
+
+  const coupons= new Couponback(req.body);
+  let result = await coupons.save();
+  res.send(result);
+})
+
+app.get("/couponsback", async (req, res) => {
+  try {
+    const createcoupons = await Couponback.find();
+    if (createcoupons.length > 0) {
+      res.send(createcoupons);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+// --------------------------extension---------------
+
+app.post("/createextension",async(req,res)=>{
+
+  const extension= new Extensionback(req.body);
+  let result = await extension.save();
+  res.send(result);
+})
+
+app.get("/extensionback", async (req, res) => {
+  try {
+    const createextension = await Extensionback.find();
+    if (createextension.length > 0) {
+      res.send(createextension);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// ------------------------appsetting----------------------
+
+app.post("/appsetting",async(req,res)=>{
+
+  const appsetting= new Appsettingback(req.body);
+  let result = await appsetting.save();
+  res.send(result);
+})
+
+app.get("/appsettingback", async (req, res) => {
+  try {
+    const appsetting = await Appsettingback.find();
+    if (appsetting.length > 0) {
+      res.send(appsetting);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 
 

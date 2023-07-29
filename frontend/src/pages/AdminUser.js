@@ -66,8 +66,8 @@ const AdminUser = () => {
             {user.length >0?(
             
               user.map((item, index) => (
-                /*<ul key={item._id}>*/
-                <ul className="heading">
+                /*<ul >*/
+                <ul key={item._id} className="heading">
                   <li className="belowlist">{index + 1}</li>
                   <li className="belowlist">{item.userrole}</li>
                   <li className="belowlist">{item.language}</li>
@@ -77,7 +77,7 @@ const AdminUser = () => {
                   {/* <Link to={`/addusermodule/${item._id}`} className="addusermodulebutton">
             Add User Modules
           </Link> */}
-          <Link to={"/addusermodule"} className="addusermodulebutton">
+          <Link to={`/addusermodule/${item._id}`} className="addusermodulebutton">
             Add User Modules
           </Link>
                   </li>
