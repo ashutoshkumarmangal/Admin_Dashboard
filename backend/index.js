@@ -14,6 +14,11 @@ const Gxcourse = require('./db/Gxcourse');
 const Couponback = require("./db/Couponback")
 const Extensionback = require("./db/Extensionback");
 const Appsettingback = require('./db/Appsettingback');
+const loginusers =require("./db/Loginuser");
+const Daycategory = require('./db/Daycategory');
+// const userdetailsback = require("./db/Userdetails");
+const Userdetails = require('./db/Userdetails');
+const Exercise_Module=require('./db/EXERCISE')
 
 require("./db/config")
 
@@ -351,6 +356,93 @@ app.get("/appsettingback", async (req, res) => {
 });
 
 
+
+// ----------------------------loginand signup detail------------------
+app.post("/register", async (req, resp) => {
+  let loginuser = new loginusers(req.body);
+  let result = await loginuser.save();
+  result = result.toObject();
+  delete result.password;
+  resp.send(result);
+});
+
+app.post("/login", async (req, resp) => {
+  if (req.body.password && req.body.email) {
+    try {
+      let loginuser = await loginusers.findOne({ email: req.body.email }).select("-password");
+      if (loginuser) {
+        resp.send(loginuser);
+      } else {
+        resp.send({ result: "No User Found" });
+      }
+    } catch (error) {
+      console.error(error);
+      resp.status(500).send({ result: "Server Error" });
+    }
+  } else {
+    resp.send({ result: "No User Found" });
+  }
+});
+
+// --------------------------day category--------------------
+
+app.post("/createdaycategory",async(req,res)=>{
+
+  const daycategory= new Daycategory(req.body);
+  let result = await daycategory.save();
+  res.send(result);
+})
+
+app.get("/daycategory", async (req, res) => {
+  try {
+    const daycategory = await Daycategory.find();
+    if (daycategory.length > 0) {
+      res.send(daycategory);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+// ----------------------------Userdetails---------------------
+
+
+
+app.get("/userdetailsback", async (req, res) => {
+  try {
+    const usersdetail = await Userdetails.find();
+    if (usersdetail.length > 0) {
+      res.send(usersdetail);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+// ------------------------------exercise-------------------------------
+
+app.post("/exercise", async (req, resp,) => {
+  const exercise = new Exercise_Module(req.body);
+  console.log("Working index.js Client side: CreateUser (POST)");
+  // let result = await exercise.save();
+  console.log("User Created:-->>",req.body);
+})
+
+// --------------------------------GET------
+
+app.get("/exercise", async (req, resp) => {
+  const exercise = await Exercise_Module.find();
+  if (exercise.length > 0) {
+      resp.send(exercise);
+  }
+  else {
+      resp.send({ result: "Product not found" });
+  }
+});
 
 app.listen(8080);
 

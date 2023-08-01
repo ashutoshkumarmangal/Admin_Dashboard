@@ -45,11 +45,13 @@ import Changepassword from "./components/Changepassword";
 import Createmodules from "./components/Createmodules";
 import Creategxcourse from "./components/Creategxcourse";
 
-// import Login from "./pages/Login";
-// import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
+import SignUp from "./pages/Signup";
+
 
 
 function App() {
@@ -62,8 +64,14 @@ function App() {
       </div>
 
       <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+      </Routes>
         <Sidebar />
         <Routes>
+
+       
           <Route path="/adminuser" element={<AdminUser />} />
           <Route path="/app_setting" element={<AppSetting />} />
           <Route path="/audit_logs" element={<AuditLogs />} />

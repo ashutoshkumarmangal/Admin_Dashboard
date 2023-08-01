@@ -103,7 +103,7 @@ const getMarathon  = async()=>{
 
   return (
     <div className="wholeareaDashboard">
-    <div className="adminDashboard5">
+    <div className="adminDashboard6">
     <div className='createcouponfield'>
 
   <div className='createcouponMandatoryfield'>

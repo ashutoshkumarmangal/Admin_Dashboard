@@ -1062,7 +1062,7 @@ option {
   height: 16px;
   padding: 5px;
 }
-.adminDashboard5{
+.adminDashboard6{
     margin-top: 100px;
     width: 68vw;
     margin-left: 320px;
@@ -1535,3 +1535,203 @@ margin-top: 20px;
 .barchart{
   margin-left: 80px;
 }
+.box_AdminUser_body_sectionB {
+  /* border: 2px solid violet; */
+  margin: 2vw 8vw 0vw 5vw;
+  overflow-y: auto;
+  /* overflow-x: auto; */
+}
+
+.table {
+  width: 60vw;
+
+}
+
+.table_head {
+  background-color: #000;
+  color: white;
+  box-shadow: #ffffff;
+}
+
+.table_head1 {
+  border: none;
+  /* padding-top: 1vh;
+                        padding-bottom: 1vh; */
+  padding: 1vh 3vw 1vh 3vw;
+
+}
+
+.table_head1_Fullname {
+  /* overflow-x: auto; */
+  display: inline-block;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+.table_head1_Email {
+  padding-left: 7vw;
+  padding-right: 7vw;
+}
+
+.table_head1_Action {
+  overflow-x: auto;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.table_add_user_module_button {
+  min-width: 6vw;
+  /* margin-left: 72%; */
+  color: white;
+  text-decoration: none;
+  padding: 1.3vh 1vw 1.3vh 2vw;
+  background-color: #0d00fc;
+  box-shadow: 3vh #000;
+}
+
+.table_All_rows {
+  /* overflow-x: auto; */
+  text-align: center;
+}
+.DayCategory_Navigation {
+  margin: 8vh 0vh 0vh 10vh;
+}
+
+.DayCategory_NavigationButtons {
+  padding: 1vh 1vh 1vh 1vh;
+  background-color: white;
+  color: black;
+  font-size: 2vh;
+  cursor: pointer;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  padding: 1.5vh;
+}
+
+.DayCategory_NavigationButtons:focus {
+  /* background-color: #4285f4; */
+  background-color: #4285f4;
+  color: white;
+}
+.DayCategory_hrTag {
+  border: 1px solid rgb(225, 225, 225);
+  width: 63vw;
+}
+
+.box_DayCategory_body_sectionB {
+  /* border: 2px solid violet; */
+  margin: 0vw 8vw 0vw 5vw;
+  overflow-y: auto;
+  /* overflow-x: auto; */
+}
+
+.DayCategory_table_head {
+  background-color: #000;
+  color: white;
+  box-shadow: #ffffff;
+}
+
+.table_head1_CategoryName {
+  padding-left: 10vw;
+  padding-right: 13vw;
+}
+
+/*------------------------------------ Day Category2 ------------------------------*/
+.DayCategory2_table_row {
+  text-align: center;
+  border: 1px solid rgb(225, 225, 225);
+  background-color: aliceblue;
+  background-size: 100%;
+}
+
+.DayCategory2_ChooseFile {
+  border: 1px solid rgb(116, 116, 116);
+  background-color: white;
+}
+
+.DayCategory2_table_head1_CategoryName {
+  padding-left: 0vw;
+  padding-right: 0vw;
+
+}
+
+.DayCategory2_navigateButtons {
+  display: flex;
+  margin: 0vw 0vw 0vw 50vw;
+}
+
+.DayCategory_Extra_NavigationButtons {
+  /* margin: 1vw 1vw 0vw 43.5vw; */
+  margin-left: 47%;
+  /* margin-left: 25.5vw; */
+  white-space: nowrap;
+  display: inline-flex;
+  /* border: 1px solid red; */
+}
+
+.DayCategory_Extra_NavigationButton1 {
+  padding: 1.5vh 1.5vh 1.5vh 1.5vh;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  margin: 0vh 1vh 0vh 0vh;
+  color: white;
+  background-color: #e67e22;
+  cursor: pointer;
+}
+
+.DayCategory_Extra_NavigationButton2 {
+  padding: 1.5vh 2vh 1.5vh 2vh;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  margin: 0vh 1vh 0vh 1vh;
+  color: white;
+  /* background-color: #17a2b8; */
+  background-color: #4285f4;
+  cursor: pointer;
+}
+
+.DayCategory_Extra_NavigationButton3 {
+  padding: 1.5vh 1.5vh 1.5vh 1.5vh;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  margin: 0vh 0vh 0vh 1vh;
+  color: white;
+  /* background-color: #17a2b8; */
+  background-color: #4285f4;
+  cursor: pointer;
+}
+.table_head1{
+  background-color: rgb(21, 2, 2);
+  color: white;
+}
+#Order-Scrool{
+display: block;
+overflow-x: scroll;
+white-space: nowrap;
+}
+.table-table-striped-columns{
+width: 60vw;
+}
+.adminDashboard5{    margin-top: -8px;
+width: 68vw;
+margin-left: 0px;
+height: 9vh;
+position: relative;
+box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+border: 0;
+font-weight: 400;
+margin-bottom: 5vh;
+}
+.table-table-striped-columns2{
+  width: 68vw;
+}
+.tagsforexercise{
+  display: flex;
+    justify-content: flex-start;
+    margin-left: 40px;
+    padding: 20px;
+
+}
+/* .Exercise2_2ndTable-table-striped-columns{
+  width:80vw;
+} */
