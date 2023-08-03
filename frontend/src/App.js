@@ -10,7 +10,7 @@ import Contestrules from "./pages/Contestrules";
 import Coupons from "./pages/Coupons";
 import Course from "./pages/Course";
 import Createcoupons from "./pages/Createcoupons";
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 import Daycategory from "./pages/Daycategory";
 import Exercise from "./pages/Exercise";
 import FAQ from "./pages/FAQ";
@@ -23,7 +23,7 @@ import Managemarathon from "./pages/Managemarathon";
 import Manageusers from "./pages/Manageusers";
 import Modules from "./pages/Modules";
 import Multierror from "./pages/Multierror";
-import Multilanguage from "./pages/Multilanguage";
+// import Multilanguage from "./pages/Multilanguage";
 import Notifications from "./pages/Notifications";
 import Order from "./pages/Order";
 import Profile from "./pages/Profile";
@@ -46,7 +46,7 @@ import Createmodules from "./components/Createmodules";
 import Creategxcourse from "./components/Creategxcourse";
 
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+// import Signup from "./pages/Signup";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
@@ -80,7 +80,7 @@ function App() {
           <Route path="/coupons" element={<Coupons />} />
           <Route path="/course" element={<Course />} />
           <Route path="/createcoupons" element={<Createcoupons />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route path="/daycategory" element={<Daycategory />} />
           <Route path="/exercise" element={<Exercise />} />
           <Route path="/faq" element={<FAQ />} />
@@ -94,7 +94,7 @@ function App() {
           <Route path="/manageusers" element={<Manageusers />} />
           <Route path="/modules" element={<Modules />} />
           <Route path="/multierror" element={<Multierror />} />
-          <Route path="/multilanguage" element={<Multilanguage />} />
+          {/* <Route path="/multilanguage" element={<Multilanguage />} /> */}
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/order" element={<Order />} />
           <Route path="/profile" element={<Profile />} />

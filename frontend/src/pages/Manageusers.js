@@ -49,47 +49,38 @@ const Manageusers = () => {
       <input type="text" placeholder="Search"  />
     </div>
   </div>
-  <div className="table1">
-            <ul className="heading">
-              <li className="headinglist">S.No</li>
-              <li className="headinglist">Profile Picture</li>
-              <li className="headinglist">Display Name</li>
-              <li className="headinglist"Email></li>
-              <li className="headinglist">Instagram Id</li>
-              <li className="headinglist">Phone Number</li>
-              <li className="headinglist">Send Notification </li>
-              <li className="headinglist">Login as user</li>
-              <li className="headinglist">Action</li>
-              
-            </ul>
-          </div>
-          {usersdetail.length >0?(
-            
-            usersdetail.map((item, index) => (
-              <ul className='heading'> 
-              {/* <ul key={item.id} className="heading"> */}
-                <li className="belowlist">{index + 1}</li>
-                <li className="belowlist">{item.profilepicture}</li>
-                <li className="belowlist">{item.name}</li>
-                <li className="belowlist">{item.email}</li>
-                <li className="belowlist">{item.instagramid}</li>
-                <li className="belowlist">{item.phonenumber}</li>
-                <li className="belowlist">{item.sendnotification}</li>
-                <li className="belowlist">{item.loginasuser}</li>
-                <li className="belowlist">{item.action}</li>
-                
-                
-                
-              </ul>
-              
-            ))
-          ):(<h2 className="no-users">No Users Found</h2>
-          )}
-          
+  <div className="tablemanage">
+  <ul className="headingmanage">
+    <li className="headinglistmanage">S.No</li>
+    <li className="headinglistmanage">Profile Picture</li>
+    <li className="headinglistmanage">Display Name</li>
+    <li className="headinglistmanage">Email</li>
+    <li className="headinglistmanage">Instagram Id</li>
+    <li className="headinglistmanage">Phone Number</li>
+    <li className="headinglistmanage">Send Notification</li>
+    <li className="headinglistmanage">Login as User</li>
+    <li className="headinglistmanage">Action</li>
+  </ul>
+  {usersdetail.length > 0 ? (
+    usersdetail.map((item, index) => (
+      <ul key={item.id} className="belowlistmanage">
+        <li>{index + 1}</li>
+        <li>{item.profilepicture}</li>
+        <li>{item.name}</li>
+        <li>{item.email}</li>
+        <li>{item.instagramid}</li>
+        <li>{item.phonenumber}</li>
+        <li>{item.sendnotification}</li>
+        <li>{item.loginasuser}</li>
+        <li>{item.action}</li>
+      </ul>
+    ))
+  ) : (
+    <h2 className="no-usersmanage">No Users Found</h2>
+  )}
+</div>
 
-
-        </div>
-
+      </div>
       </div>
       </div>
   )

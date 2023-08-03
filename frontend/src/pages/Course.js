@@ -41,40 +41,39 @@ const Course = () => {
         </div>
 
         <div className="tableDashboard">
-          <div className="table">
-            <ul className="heading">
-            <li className="headinglist">S.No</li>
-              <li className="headinglist">Course Name</li>
-              <li className="headinglist">course Sub Title</li>
-              <li className="headinglist">Tenure</li>
-              
-              <li className="headinglist">image</li>
-              <li className="headinglist">Start Date </li>
-              
-              <li className="headinglist">Copy Marathon Url</li>
-              <li className="headinglist">Copy Gift Url</li>
-            </ul>
-            {course.length >0?(
-            
-              course.map((item, index) => (
-                
-                <ul className="heading">
-                <li className="belowlist">{index +1}</li>
-              <li className="belowlist">{item.title}</li>
-              <li className="belowlist">{item.subtitle}</li>
-              <li className="belowlist">{item.tenure}</li>
-              <li className="belowlist">{item.image}</li>
-              <li className="belowlist">{item.startdate}</li>
-              <li className="belowlist">{} </li>
-              <li className="belowlist">{}</li>   
-                  
-                </ul>
-                
-              ))
-            ):(<h2 className="no-data">No Data Found</h2>
-            )}
+        <div className="tablecour">
+  <ul className="headingcour">
+    <li className="headinglistcour">S.No</li>
+    <li className="headinglistcour">Course Name</li>
+    <li className="headinglistcour">Course Sub Title</li>
+    <li className="headinglistcour">Tenure</li>
+    <li className="headinglistcour">Image</li>
+    <li className="headinglistcour">Start Date</li>
+    <li className="headinglistcour">Copy Marathon Url</li>
+    <li className="headinglistcour">Copy Gift Url</li>
+  </ul>
+  {course.length > 0 ? (
+    course.map((item, index) => (
+      <ul key={item.id} className="belowlistcour">
+        <li>{index + 1}</li>
+        <li>{item.title}</li>
+        <li>{item.subtitle}</li>
+        <li>{item.tenure}</li>
+        <li>{item.image}</li>
+        <li>{item.startdate}</li>
+        <li>
+          <input className='buttoncour' type="button" value="Copy Marathon URL" readOnly />
+        </li>
+        <li>
+          <input className='buttoncour' type="button" value="Copy Gift URL" readOnly />
+        </li>
+      </ul>
+    ))
+  ) : (
+    <h2 className="no-datacour">No Data Found</h2>
+  )}
+</div>
 
-        </div>
         </div>
         </div>
         </div>

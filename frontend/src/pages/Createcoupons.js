@@ -105,8 +105,9 @@ const getMarathon  = async()=>{
     <div className="wholeareaDashboard">
     <div className="adminDashboard6">
     <div className='createcouponfield'>
-
-  <div className='createcouponMandatoryfield'>
+  {/* <div '> */}
+    <fieldset className='createcouponMandatoryfield'>
+  <legend className='legendcrcou'>Mandatory Field</legend>
   
   <div className='mandatoryfield1part'>
   
@@ -152,7 +153,8 @@ const getMarathon  = async()=>{
   </div>
 
 
-  </div>
+  </fieldset>
+  
 
   <div className='createcouponMandatoryfield2'>
   <div className='mandatoryfield1part'>
@@ -242,48 +244,42 @@ const getMarathon  = async()=>{
           </div>
         </div>
         {/* <div className="tableDashboard"> */}
-          <div className="table1">
-            <ul className="heading">
-              <li className="headinglist">S.No</li>
-              <li className="headinglist">email</li>
-              <li className="headinglist">Coupons</li>
-              <li className="headinglist">Created date</li>
-              <li className="headinglist">Discount</li>
-              <li className="headinglist">Discount type</li>
-              <li className="headinglist">marathan name </li>
-              <li className="headinglist">order no</li>
-              <li className="headinglist">no of uses </li>
-              <li className="headinglist">consumed count  </li>
-              <li className="headinglist">valid </li>
-              
-            </ul>
-          </div>
+        <div className="tablecrcou">
+  <ul className="headingcrcou">
+    <li className="headinglistcrcou">S.No</li>
+    <li className="headinglistcrcou">Email</li>
+    <li className="headinglistcrcou">Coupons</li>
+    <li className="headinglistcrcou">Created Date</li>
+    <li className="headinglistcrcou">Discount</li>
+    <li className="headinglistcrcou">Discount Type</li>
+    <li className="headinglistcrcou">Marathon Name</li>
+    <li className="headinglistcrcou">Order No</li>
+    <li className="headinglistcrcou">No of Uses</li>
+    <li className="headinglistcrcou">Consumed Count</li>
+    <li className="headinglistcrcou">Valid</li>
+  </ul>
+  {coupons.length > 0 ? (
+    coupons.map((item, index) => (
+      <ul key={item.id} className="belowlistcrcou">
+        <li>{index + 1}</li>
+        <li>{item.email}</li>
+        <li>{item.couponcode}</li>
+        <li>{item.startdate}</li>
+        <li>{item.discount}</li>
+        <li>{item.discounttype}</li>
+        <li>{item.marathon}</li>
+        <li>{item.orderno}</li>
+        <li>{item.noofuses}</li>
+        <li>{item.consumedcount}</li>
+        <li>{item.valid}</li>
+      </ul>
+    ))
+  ) : (
+    <h2 className="no-userscrcou">No Coupons Found</h2>
+  )}
+</div>
 
-          {coupons.length >0?(
-            
-            coupons.map((item, index) => (
-              <ul className='heading'> 
-              {/* <ul key={item.id} className="heading"> */}
-                <li className="belowlist">{index + 1}</li>
-                <li className="belowlist">{item.email}</li>
-                <li className="belowlist">{item.couponcode}</li>
-                <li className="belowlist">{item.startdate}</li>
-                <li className="belowlist">{item.discount}</li>
-                <li className="belowlist">{item.discounttype}</li>
-                <li className="belowlist">{item.marathon}</li>
-                <li className="belowlist">{item.orderno}</li>
-                <li className="belowlist">{item.noofuses}</li>
-                <li className="belowlist">{item.consumedcount}</li>
-                <li className="belowlist">{item.valid}</li>
-                
-                
-              </ul>
-              
-            ))
-          ):(<h2 className="no-users">No Users Found</h2>
-          )}
-          
-        </div>
+      </div>
       </div>
     
           

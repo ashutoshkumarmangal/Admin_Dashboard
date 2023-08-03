@@ -11,7 +11,8 @@ const Daycategory = () => {
   
 
   const handleBack = () => {
-    navigate('/daycategory');
+    setCurrentPage('DayCategory1');
+    handleExtraButtonClickoff();
   };
 
   const handleSubmit = async (e) => {
@@ -33,8 +34,9 @@ const Daycategory = () => {
       if (response.ok) {
         const result = await response.json();
         console.warn(result);
-        localStorage.setItem('marathon', JSON.stringify(result));
-        navigate('/daycategory');
+        localStorage.setItem('daycategory', JSON.stringify(result));
+        setCurrentPage('DayCategory1');
+        // navigate('/daycategory');
       } else {
         console.error('Error: ', response.status);
       }
@@ -84,13 +86,11 @@ const Daycategory = () => {
     
       return (
         <div className="box_AdminUser_body">
-          <div className="box_AdminUser_body_sectionA">
-            {/* DayCategory1 - Body 1 */}
-          </div>
+         
           <div className="box_DayCategory_body_sectionB">
             {/* DayCategory1 - Body 2 */}
-            <div className="table1">
-            <ul className="heading">
+            <div className="tableday">
+            <ul className="headingday">
               <li className="headinglist">S.No</li>
               <li className="headinglist">Category Name</li>
               <li className="headinglist">Category Image</li>
@@ -164,13 +164,17 @@ const Daycategory = () => {
         <div className="uppernavbar">Day Category</div>
         <div className="box_AdminUser_body">
         <div className="DayCategory_Navigation">
+        <div className='togglebutton'>
           <button onClick={() => { handleButtonClick('DayCategory1'); handleExtraButtonClickoff(); }} className='DayCategory_NavigationButtons'>Category</button>
           <button onClick={() => { handleButtonClick('DayCategory2'); handleExtraButtonClickon(); }} className='DayCategory_NavigationButtons'>Create Category</button>
+          </div>
           {showExtraButtons && (
+            <div className='extrabuttons'>
             <div className="DayCategory_Extra_NavigationButtons">
               <button className='DayCategory_Extra_NavigationButton1' onClick={handleBack} >&lt;&lt;BACK</button>
               <button className='DayCategory_Extra_NavigationButton2' onClick={handleSubmit} >ADD</button>
               <button className='DayCategory_Extra_NavigationButton3' onClick={handleSubmit} >SAVE</button>
+            </div>
             </div>
           )}
           <hr className='DayCategory_hrTag'></hr>

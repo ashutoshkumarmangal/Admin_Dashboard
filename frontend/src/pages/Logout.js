@@ -2,7 +2,10 @@ import React from 'react'
 
 const Logout = () => {
   return (
-    <div>Logout</div>
+    <div className="wholeareanotifications">
+    <div className="wholeareadashboard">
+    this is Logout page
+    </div></div>
   )
 }
 

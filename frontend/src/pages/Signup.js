@@ -3,7 +3,8 @@ import { useNavigate} from "react-router-dom";
 //import Axios from 'axios';
 
 const SignUp =()=>{
-    const [name,setName] = useState("");
+    const [firstname,setFirstname] = useState("");
+    const [lastname,setLastname] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState(""); 
     
@@ -18,10 +19,10 @@ const SignUp =()=>{
     },[])
 
     const collectData=async()=>{
-        console.warn(name,email, password)
+        console.warn(firstname,lastname,email, password)
         let result = await fetch('http://localhost:8080/register',{
             method:'POST',
-            body: JSON.stringify({name,email,password}),
+            body: JSON.stringify({firstname,lastname,email,password}),
             headers:{
                 'Content-Type':'application/json'
             }
@@ -41,8 +42,12 @@ const SignUp =()=>{
         
             <h1>Register</h1>
             <input className="inputBox" type="text"
-            value={name} 
-            onChange={(e)=>setName(e.target.value)}placeholder="Enter Name" />
+            value={firstname} 
+            onChange={(e)=>setFirstname(e.target.value)}placeholder="Enter First Name" />
+
+<input className="inputBox" type="text"
+            value={lastname} 
+            onChange={(e)=>setLastname(e.target.value)}placeholder="Enter Last Name" />
 
             <input className="inputBox" type="text"
             value={email} 

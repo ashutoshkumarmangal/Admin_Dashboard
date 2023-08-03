@@ -15,6 +15,17 @@ const getMarathon  = async()=>{
   setMarathon(result);
 }
 
+
+const [contestback, setContestback] = useState([]);
+useEffect(()=>{
+  getContestback();
+
+},[]);
+const getContestback  = async()=>{
+  let result = await fetch("http://localhost:8080/contestback");
+  result = await result.json();
+  setContestback(result);
+}
   return (
     <div className="wholeareadashboard">
       <div className="wholeareacontest">
@@ -103,23 +114,44 @@ const getMarathon  = async()=>{
       <input type="text" placeholder="Search"  />
     </div>
   </div>
-  <div className="table1">
+  <div className="table">
             <ul className="heading">
               <li className="headinglist">S.No</li>
               <li className="headinglist">Full name</li>
               <li className="headinglist">email</li>
-              <li className="headinglist"download></li>
+              <li className="headinglist">download</li>
               <li className="headinglist">Finalist</li>
               <li className="headinglist">collage</li>
               <li className="headinglist">login as user </li>
               <li className="headinglist">send notification</li>
               
             </ul>
+            {contestback.length >0?(
+            
+            contestback.map((item, index) => (
+              
+              <ul key={item._id} className="heading">
+                <li className="belowlist">{index + 1}</li>
+                <li className="belowlist">{item.fullname}</li>
+                <li className="belowlist">{item.email}</li>
+                <li className="belowlist">{item.download}</li>
+                <li className="belowlist">{item.finalist}</li>
+                <li className="belowlist">{item.collage}</li>
+                <li className="belowlist">{item.loginasuser}</li>
+                <li className="belowlist">{item.notification}</li>
+                
+              </ul>
+              
+            ))
+          ):(<h2 className="no-users">No Users Found</h2>
+          )}
+          
+        </div>
           </div>
 </div>
       </div>
       </div>
-    </div>
+    
   );
 };
 

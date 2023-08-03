@@ -52,11 +52,11 @@ const Sidebar = ({children}) => {
             name:"Create Coupons",
             icon:faGift
         },
-        {
-            path:"/dashboard",
-            name:"Dashboard",
-            icon:faPieChart
-        },
+        // {
+        //     path:"/dashboard",
+        //     name:"Dashboard",
+        //     icon:faPieChart
+        // },
         {
             path:"/daycategory",
             name:"Day Category",
@@ -127,11 +127,11 @@ const Sidebar = ({children}) => {
             name:"Multi Error",
             icon:faExclamationTriangle
         },
-        {
-            path:"/multilanguage",
-            name:"Multi Language",
-            icon:faLanguage
-        },
+        // {
+        //     path:"/multilanguage",
+        //     name:"Multi Language",
+        //     icon:faLanguage
+        // },
         {
             path:"/notifications",
             name:"Notifications",
@@ -163,7 +163,7 @@ const Sidebar = ({children}) => {
             icon:faUser
         },
         {
-            path:"/logout",
+            path:"/",
             name:"Log Out",
             icon:faSignOut
         },

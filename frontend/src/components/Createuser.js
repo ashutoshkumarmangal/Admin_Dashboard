@@ -54,70 +54,108 @@ const Createuser = () => {
     <div className="wholeareaDashboard">
       <div className="wholeareaCreateuser">
         <div className="uppernavbar"> Create User</div>
-        <div className="form-container">
+        {/* <div className="form-container"> */}
           <form onSubmit={handleSubmit}>
 
 
-            <div className="required">
+            {/* <div className="required">
               <label>User Role:</label>
               <select id="userrole"  value={userrole} onChange={(e)=> setUserrole(e.target.value)}>
                 <option value="">--Select Role--</option>
                 <option >User</option>
                 <option >Admin</option>
               </select>
-            </div>
+            </div> */}
 
-            <div className="required">
-              <label>--Select Language--</label>
-              <select id="language" value={language} onChange={(e) =>setLanguage(e.target.value)}>
+            <div className="blockmanagemarathon">
+        <div className="blocknameareamanagemarathon">
+          <div className="blocknamemanagemarathon">User Role</div>
+        </div>
+        <div className="block-type-area">
+          <select className="selectauditlogmanageextension" value={userrole} onChange={(e)=> setUserrole(e.target.value)}>
+            <option disabled selected>
+              --User Role--
+            </option>
+            <option >User</option>
+                <option >Admin</option>
+           
+          </select>
+        </div>
+      </div>
 
-                <option value="">Select a language</option>
-                <option >English</option>
+            
 
+            <div className="blockmanagemarathon">
+        <div className="blocknameareamanagemarathon">
+          <div className="blocknamemanagemarathon">Select Language</div>
+        </div>
+        <div className="block-type-area">
+          <select className="selectauditlogmanageextension" value={language} onChange={(e)=> setLanguage(e.target.value)}>
+            <option disabled selected>
+            Select a language
+            </option>
+            <option >English</option>
                 <option >French</option>
-              </select>
-            </div>
+           
+          </select>
+        </div>
+      </div>
 
-            <div className="required">
-              <label>Name:</label>
-              <input type="text" id="name" value={name} onChange={(e)=> setName(e.target.value)}></input>
-            </div>
+      <div className="blockmanagemarathon">
+        <div className="blocknameareamanagemarathon">
+          <div className="blocknamemanagemarathon">Name:</div>
+        </div>
+        <div className="block-type-area">
+          <input className="inputbox" type="text" value={name} onChange={(e)=> setName(e.target.value)} />
+        </div>
+      </div>
 
-            <div className="required">
-              <label>Last Name:</label>
-              <input type="text" id="lastName" value={lastName} onChange={(e)=> setLastname(e.target.value)} ></input>
-            </div>
+      <div className="blockmanagemarathon">
+        <div className="blocknameareamanagemarathon">
+          <div className="blocknamemanagemarathon">Last Name</div>
+        </div>
+        <div className="block-type-area">
+          <input className="inputbox" type="text" value={lastName} onChange={(e)=> setLastname(e.target.value)} />
+        </div>
+      </div>
 
-            <div className="required">
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email"
-              value={email} onChange={(e)=> setEmail(e.target.value)} ></input>
-            </div>
+      <div className="blockmanagemarathon">
+        <div className="blocknameareamanagemarathon">
+          <div className="blocknamemanagemarathon">Email</div>
+        </div>
+        <div className="block-type-area">
+          <input className="inputbox" type="email" value={email} onChange={(e)=> setEmail(e.target.value)} />
+        </div>
+      </div>
 
-            <div className="required">
-              <label>Password:</label>
-              <input type="password" id="password"  value={password} onChange={(e)=> setPassword(e.target.value)}
-             ></input>
-            </div>
+      <div className="blockmanagemarathon">
+        <div className="blocknameareamanagemarathon">
+          <div className="blocknamemanagemarathon">Password</div>
+        </div>
+        <div className="block-type-area">
+          <input className="inputbox" type="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
+        </div>
+      </div>
 
-            <div className="required">
-              <label>Confirm Password:</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                value={confirmPassword} onChange={(e)=> setConfirmpassword(e.target.value)}>
-                </input>
-            </div>
-
-           <button type="button" onClick={handleBack}>Back</button>
-            <button type="submit">Submit</button>
+      <div className="blockmanagemarathon">
+        <div className="blocknameareamanagemarathon">
+          <div className="blocknamemanagemarathon">Confirm Password</div>
+        </div>
+        <div className="block-type-area">
+          <input className="inputbox" type="password" value={confirmPassword} onChange={(e)=> setConfirmpassword(e.target.value)} />
+        </div>
+      </div>
+<div className="blockmanagemarathon">
+           <button className="submitcreateuser" type="button" onClick={handleBack}>Back</button>
+            <button className="submitcreateuser" type="submit">Submit</button>
+        </div>
           </form>
         </div>
 
         {/* <input type='text' placeholder='--Select Role--' className='userroletextbox' value = {userrole}
     onChange={(e)=>{setUserrole(e.target.value)}}/> */}
       </div>
-    </div>
+    // </div>
   );
 };
 

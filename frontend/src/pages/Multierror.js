@@ -113,7 +113,7 @@ const Multierror = () => {
                     />
                   </div>
                   <div className="englisharea">
-                    <label>Italian</label>
+                    <label>French</label>
                     <textarea
                       value={french}
                       onChange={(e) => setFrench(e.target.value)}

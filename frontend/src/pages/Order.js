@@ -2,9 +2,9 @@ import React from 'react'
 
 const Order = () => {
   return (
+    <div className="wholeareanotifications">
      <div className="wholeareadashboard">
-      <div className="wholeareanotifications">
-        <div className="uppernavbar">Messages</div>
+        
           <select className="selectorder">
             <option disabled selected>
               --Select Name--

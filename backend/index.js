@@ -19,6 +19,9 @@ const Daycategory = require('./db/Daycategory');
 // const userdetailsback = require("./db/Userdetails");
 const Userdetails = require('./db/Userdetails');
 const Exercise_Module=require('./db/EXERCISE')
+const Auditlogs = require('./db/Auditlogs')
+const Contest = require('./db/Contestback');
+const Contestback = require('./db/Contestback');
 
 require("./db/config")
 
@@ -425,22 +428,74 @@ app.get("/userdetailsback", async (req, res) => {
 });
 // ------------------------------exercise-------------------------------
 
-app.post("/exercise", async (req, resp,) => {
-  const exercise = new Exercise_Module(req.body);
-  console.log("Working index.js Client side: CreateUser (POST)");
-  // let result = await exercise.save();
-  console.log("User Created:-->>",req.body);
+// app.post("/exercise", async (req, resp,) => {
+//   const exercise = new Exercise_Module(req.body);
+//   console.log("Working index.js Client side: CreateUser (POST)");
+//   // let result = await exercise.save();
+//   console.log("User Created:-->>",req.body);
+// })
+
+app.post("/exercise",async(req,res)=>{
+
+  const exercise= new Exercise_Module(req.body);
+  let result = await exercise.save();
+  res.send(result);
 })
 
 // --------------------------------GET------
 
-app.get("/exercise", async (req, resp) => {
-  const exercise = await Exercise_Module.find();
-  if (exercise.length > 0) {
-      resp.send(exercise);
+app.get("/exerciseback", async (req, res) => {
+  try {
+    const exerciseback = await Exercise_Module.find();
+    if (exerciseback.length > 0) {
+      res.send(exerciseback);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
   }
-  else {
-      resp.send({ result: "Product not found" });
+});
+
+// app.get("/exerciseback", async (req, resp) => {
+//   const exerciseback = await Exercise_Module.find();
+//   if (exerciseback.length > 0) {
+//       resp.send(exerciseback);
+//   }
+//   else {
+//       resp.send({ result: "Product not found" });
+//   }
+// });
+// --------------------auditlogs--------------------
+
+
+app.get("/auditlogsback", async (req, res) => {
+  try {
+    const auditlogs = await Auditlogs.find();
+    if (auditlogs.length > 0) {
+      res.send(auditlogs);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// -----------------------------------contestback------------------
+app.get("/contestback", async (req, res) => {
+  try {
+    const contest = await Contestback.find();
+    if (contest.length > 0) {
+      res.send(contest);
+    } else {
+      res.send("Data not found");
+    }
+  } catch (error) {
+    console.error("Error fetching users: ", error);
+    res.status(500).send("Internal Server Error");
   }
 });
 

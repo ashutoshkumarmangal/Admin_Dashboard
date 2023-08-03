@@ -13,6 +13,16 @@ const Auditlogs = () => {
     setUsers(result);
   };
 
+
+  const [auditlogsback, setAuditlogsback] = useState([]);
+  useEffect(()=>{
+    getAuditlogsback();
+  }, []);
+  const getAuditlogsback = async ()=>{
+    let result = await fetch("http://localhost:8080/auditlogsback");
+    result = await result.json();
+    setAuditlogsback(result);
+  };
   return (
     <div className="wholeareadashboard">
       <div className="wholeareaauditlogs">
@@ -50,19 +60,36 @@ const Auditlogs = () => {
           <div className="table">
             <ul className="heading">
               <li className="headinglist">S.No</li>
-              <li className="headinglist">Email</li>
-              <li className="headinglist">Session count</li>
-              <li className="headinglist">Ip List</li>
+              <li className="headinglist">ip address</li>
+              <li className="headinglist">table name</li>
+              <li className="headinglist">action</li>
+              <li className="headinglist">createdDate</li>
              
             </ul>
+
+            {auditlogsback.length >0?(
+            
+            auditlogsback.map((item, index) => (
+              
+              <ul key={item._id} className="heading">
+                <li className="belowlist">{index + 1}</li>
+                <li className="belowlist">{item.ipaddress}</li>
+                <li className="belowlist">{item.tablename}</li>
+                <li className="belowlist">{item.action}</li>
+                <li className="belowlist">{item.createddate}</li>
+                
+              </ul>
+              
+            ))
+          ):(<h2 className="no-users">No Users Found</h2>
+          )}
+          
+        </div>
 </div>
-        {/* <div className="pagination">
-          <button className="previousButton">{'\u00AB'} Previous</button>
-          <button className="nextButton">Next {'\u00BB'}</button>
-        </div> */}
+       
       </div>
     </div>
-    </div>
+    
 
   );
 };

@@ -40,43 +40,43 @@ const Managemarathon = () => {
         </div>
 
         <div className="tableDashboard">
-          <div className="table">
-            <ul className="heading">
-            <li className="headinglist">S.No</li>
-              <li className="headinglist">Marathon Name</li>
-              <li className="headinglist">View</li>
-              <li className="headinglist">Tenure</li>
-              <li className="headinglist">Description</li>
-              <li className="headinglist">image</li>
-              <li className="headinglist">Start Date </li>
-              <li className="headinglist">Action</li>
-              <li className="headinglist">Copy Marathon Url</li>
-              <li className="headinglist">Copy Gift Url</li>
-            </ul>
-            {marathon.length >0?(
-            
-              marathon.map((item, index) => (
-                
-                <ul className="heading">
-                <li className="belowlist">{index +1}</li>
-              <li className="belowlist">{item.title}</li>
-              <li className="belowlist">view</li>
-              <li className="belowlist">{item.noofdays}</li>
-              <li className="belowlist">{item.description}</li>
-              <li className="belowlist">{item.image}</li>
-              <li className="belowlist">{item.startdate} </li>
-              <li className="belowlist">{}</li>
-              <li className="belowlist">{}</li>
-              <li className="belowlist">{}</li>
-                 
-                  
-                </ul>
-                
-              ))
-            ):(<h2 className="no-data">No Data Found</h2>
-            )}
+        <div className="tableman">
+  <ul className="headingman">
+    <li className="headinglistman">S.No</li>
+    <li className="headinglistman">Marathon Name</li>
+    <li className="headinglistman">View</li>
+    <li className="headinglistman">Tenure</li>
+    <li className="headinglistman">Description</li>
+    <li className="headinglistman">Image</li>
+    <li className="headinglistman">Start Date</li>
+    <li className="headinglistman">Action</li>
+    <li className="headinglistman">Copy Marathon Url</li>
+    <li className="headinglistman">Copy Gift Url</li>
+  </ul>
+  {marathon.length > 0 ? (
+    marathon.map((item, index) => (
+      <ul key={item.id} className="belowlistman">
+        <li>{index + 1}</li>
+        <li>{item.title}</li>
+        <li>{}</li>
+        <li>{item.noofdays}</li>
+        <li>{item.description}</li>
+        <li>{item.image}</li>
+        <li>{item.startdate}</li>
+        <li>{item.action}</li>
+        <li>
+          <input className='buttoncour' type="button" value="Copy Marathon URL" readOnly />
+        </li>
+        <li>
+          <input className='buttoncour' type="button" value="Copy Gift URL" readOnly />
+        </li>
+      </ul>
+    ))
+  ) : (
+    <h2 className="no-dataman">No Data Found</h2>
+  )}
+</div>
 
-        </div>
         </div>
         </div>
         </div>

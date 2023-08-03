@@ -57,48 +57,44 @@ const Coupons = () => {
           </div>
         </div>
         {/* <div className="tableDashboard"> */}
-          <div className="table1">
-            <ul className="heading">
-              <li className="headinglist">S.No</li>
-              <li className="headinglist">email</li>
-              <li className="headinglist">Coupons</li>
-              <li className="headinglist">Created Date</li>
-              <li className="headinglist">Discount</li>
-              <li className="headinglist">Discount type</li>
-              <li className="headinglist">Marathon name </li>
-              <li className="headinglist">Order no</li>
-              <li className="headinglist">no of uses </li>
-              <li className="headinglist">consumed count </li>
-              <li className="headinglist">valid </li>
-              
-            </ul>
-          </div>
+        <div className="tablecou">
+  <ul className="headingcou">
+    <li className="headinglistcou">S.No</li>
+    <li className="headinglistcou">Email</li>
+    <li className="headinglistcou">Coupons</li>
+    <li className="headinglistcou">Created Date</li>
+    <li className="headinglistcou">Discount</li>
+    <li className="headinglistcou">Discount Type</li>
+    <li className="headinglistcou">Marathon Name</li>
+    <li className="headinglistcou">Order No</li>
+    <li className="headinglistcou">No of Uses</li>
+    <li className="headinglistcou">Consumed Count</li>
+    <li className="headinglistcou">Valid</li>
+  </ul>
 
-          
-          {coupons.length >0?(
-            
-            coupons.map((item, index) => (
-              <ul className='heading'> 
-              {/* <ul key={item.id} className="heading"> */}
-                <li className="belowlist">{index + 1}</li>
-                <li className="belowlist">{item.email}</li>
-                <li className="belowlist">{item.couponcode}</li>
-                <li className="belowlist">{item.startdate}</li>
-                <li className="belowlist">{item.discount}</li>
-                <li className="belowlist">{item.discounttype}</li>
-                <li className="belowlist">{item.marathon}</li>
-                <li className="belowlist">{item.orderno}</li>
-                <li className="belowlist">{item.noofuses}</li>
-                <li className="belowlist">{item.consumedcount}</li>
-                <li className="belowlist">{item.valid}</li>
-                
-                
-              </ul>
-              
-            ))
-          ):(<h2 className="no-users">No Users Found</h2>
-          )}
-          
+  {coupons.length > 0 ? (
+    coupons.map((item, index) => (
+      <ul key={item.id} className="belowlistcou">
+        <li>{index + 1}</li>
+        <li className="email-cell">{item.email}</li>
+        <li>{item.couponcode}</li>
+        <li>{item.startdate}</li>
+        <li>{item.discount}</li>
+        <li>{item.discounttype}</li>
+        <li>{item.marathon}</li>
+        <li>{item.orderno}</li>
+        <li>{item.noofuses}</li>
+        <li>{item.consumedcount}</li>
+        <li>
+          <input type='checkbox' />
+        </li>
+      </ul>
+    ))
+  ) : (
+    <h2 className="no-userscou">No Coupons Found</h2>
+  )}
+</div>
+
         </div>
       
   )

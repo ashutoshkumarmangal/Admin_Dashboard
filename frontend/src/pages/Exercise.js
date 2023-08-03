@@ -53,7 +53,7 @@ const DayCategory = () => {
 
   const getExercise = async () => {
     try {
-      const response = await fetch("http://localhost:8080/exercise");
+      const response = await fetch("http://localhost:8080/exerciseback");
       if (response.ok) {
         const result = await response.json();
         setExercise(result);
@@ -66,7 +66,8 @@ const DayCategory = () => {
   };
 
   const handleBack = () => {
-    navigate("/exercise");
+    setCurrentPage('DayCategory1');
+    setShowExtraButtons(false);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -148,14 +149,9 @@ const DayCategory = () => {
             {/* DayCategory1 - Body 2 */}
             <ul className="heading">
               <li className="headinglist">S.No</li>
-              <li className="headinglist">Order no.</li>
-              <li className="headinglist">Transaction id</li>
-              <li className="headinglist">Coupons</li>
-              <li className="headinglist">Transaction Amount</li>
-              <li className="headinglist">Status</li>
-              <li className="headinglist">Order Active</li>
-              <li className="headinglist">Title</li>
-              <li className="headinglist">Full Name</li>
+              <li className="headinglist">User role</li>
+              <li className="headinglist">Language</li>
+            
             </ul>
 
             {Exercise.length > 0 ? (
@@ -164,12 +160,7 @@ const DayCategory = () => {
                   <li className="belowlist">{index + 1}</li>
                   <li className="belowlist">{item.userrole}</li>
                   <li className="belowlist">{item.language}</li>
-                  <li>
-                    <i
-                      className="fa-solid fa-trash-can fa-xs cursor_pointer"
-                      
-                    ></i>
-                  </li>
+                
                 </ul>
               ))
             ) : (
@@ -206,6 +197,7 @@ const DayCategory = () => {
                       </div>
                     </div>
                   </td>
+
                   <td>
                     <select name="" id="" className='selectListInput' value={ExerciseLanguage} onChange={(e) => setExerciseLanguage(e.target.value)} >
                       <option value="">--Select Language--</option>
@@ -213,16 +205,19 @@ const DayCategory = () => {
                       <option value="Italian">Italian</option>
                     </select>
                   </td>
+
                 </tr>
               </tbody>
             </table>
+
+
             <div className='tagsforexercise'>
               <label htmlFor="Exercise2_CreateTag" className='Exercise2_CreateTagLabel' >Tags</label>
               <input type="text" maxLength="20" id='Exercise2_CreateTag' className='Exercise2_CreateTagInput' placeholder="Category Name" />
               <button className='Exercise2_CreateTagButton' type='button' >+</button>
             </div>
             <div className="Exercise2_TagOptionsContainer">
-              {/* Tag Buttons */}
+              
               {buttonData.map((button) => (
                 <button
                   key={button.id}
@@ -233,6 +228,7 @@ const DayCategory = () => {
                 </button>
               ))}
             </div>
+
             <div>
               <table className="Exercise2_2ndTable-table-striped-columns">
                 <thead className="DayCategory_table_head">
@@ -255,29 +251,32 @@ const DayCategory = () => {
   return (
     <div className="wholeareadashboard">
     <div className="wholeareanotifications">
-      <div className="uppernavbar">Messages</div>
+      <div className="uppernavbar">Exercise</div>
       <div className="box_AdminUser_body">
         <div className="DayCategory_Navigation">
+
+          <div className='togglebutton'>
           <button onClick={() => { handleButtonClick('DayCategory1'); handleExtraButtonClickoff(); }} className='DayCategory_NavigationButtons'>Exercise</button>
           <button onClick={() => { handleButtonClick('DayCategory2'); handleExtraButtonClickon(); }} className='DayCategory_NavigationButtons'>Create Exercise</button>
+          </div>
+
+
           {showExtraButtons && (
+            <div className='extrabuttons'>
             <div className="DayCategory_Extra_NavigationButtons">
               <button className='DayCategory_Extra_NavigationButton1' onClick={handleBack} >&lt;&lt;BACK</button>
               <button className='DayCategory_Extra_NavigationButton2' onClick={handleSubmit} >ADD</button>
               <button className='DayCategory_Extra_NavigationButton3' onClick={handleSubmit} >SAVE</button>
+            </div>
             </div>
           )}
           <hr className='DayCategory_hrTag'></hr>
         </div>
         {renderCurrentPage()}
         <div className="box_AdminUser_body_sectionA">
-          <div className="search_Field">
-            {/* Search field */}
-          </div>
+          
         </div>
-        <div className="box_DayCategory_body_sectionB">
-          {/* Additional content */}
-        </div>
+        
       </div>
     </div>
     </div>

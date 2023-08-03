@@ -41,7 +41,7 @@ const Gxcourse = () => {
             <ul className="heading">
             <li className="headinglist">S.No</li>
               <li className="headinglist">Course Name</li>
-              <li className="headinglist">Course Subtitle</li>
+              <li className="headinglist">Course_Subtitle</li>
               <li className="headinglist">Tenure</li>
               
               <li className="headinglist">Image</li>

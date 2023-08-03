@@ -54,41 +54,36 @@ const AdminUser = () => {
           </div>
         </div>
         <div className="tableDashboard">
-          <div className="table">
-            <ul className="heading">
-              <li className="headinglist">S.No</li>
-              <li className="headinglist">User Role</li>
-              <li className="headinglist">Language</li>
-              <li className="headinglist">Full Name</li>
-              <li className="headinglist">Email</li>
-              <li className="headinglist">Action</li>
-            </ul>
-            {user.length >0?(
-            
-              user.map((item, index) => (
-                /*<ul >*/
-                <ul key={item._id} className="heading">
-                  <li className="belowlist">{index + 1}</li>
-                  <li className="belowlist">{item.userrole}</li>
-                  <li className="belowlist">{item.language}</li>
-                  <li className="belowlist">{item.name +" " +item.lastName}</li>
-                  <li className="belowlist">{item.email}</li>
-                  <li className="belowlist">
-                  {/* <Link to={`/addusermodule/${item._id}`} className="addusermodulebutton">
-            Add User Modules
-          </Link> */}
-          <Link to={`/addusermodule/${item._id}`} className="addusermodulebutton">
-            Add User Modules
-          </Link>
-                  </li>
-                </ul>
-                /*</ul>*/
-              ))
-            ):(<h2 className="no-users">No Users Found</h2>
-            )}
-            
-          </div>
-        </div>
+  <ul className="tableadmi">
+    <li className="headingadmi">
+      <span className="headinglist">S.No</span>
+      <span className="headinglist">User Role</span>
+      <span className="headinglist">Language</span>
+      <span className="headinglist fullname">Full Name</span>
+      <span className="headinglist email">Email</span>
+      <span className="headinglist action">Action</span>
+    </li>
+    {user.length > 0 ? (
+      user.map((item, index) => (
+        <li key={item._id} className="belowlistadmi">
+          <span>{index + 1}</span>
+          <span>{item.userrole}</span>
+          <span>{item.language}</span>
+          <span className="fullname">{item.name + " " + item.lastName}</span>
+          <span className="email">{item.email}</span>
+          <span className="action">
+            <Link to={`/addusermodule/${item._id}`} className="addusermodulebuttonadmi">
+              Add Modules
+            </Link>
+          </span>
+        </li>
+      ))
+    ) : (
+      <li className="no-usersadmi">No Users Found</li>
+    )}
+  </ul>
+</div>
+
       </div>
     </div>
   );

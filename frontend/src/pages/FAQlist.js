@@ -30,8 +30,8 @@ const FAQlist = () => {
   // --------------------------------------
 
   const getData = () => {
-    const data = faqtag.map((item, index) => {
-      return { ...item, ...faq[index] };
+    const data = faq.map((item, index) => {
+      return { ...item, ...faqtag[index] };
     });
     setData(data);
   };
