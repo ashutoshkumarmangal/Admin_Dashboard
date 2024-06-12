@@ -72,4 +72,4 @@ An admin dashboard built using JavaScript, React, and MongoDB. This project prov
 - **Settings**: Configure application settings in the Settings section.
 
 # Note:
-## This is my intership project so there may be some and can be utilised is much better way. To help improve this you may contact.
+## This is my internship project so there may be some flaw and can be utilised in much better way. To help improve this you may contact.
